@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0064)file:///C:/Users/Khalob/Desktop/boot/index2_files/dashboard.html -->
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,6 @@
 
     <title>
 
-        Overview · Dashboard theme · Official Bootstrap Themes
 
     </title>
 
