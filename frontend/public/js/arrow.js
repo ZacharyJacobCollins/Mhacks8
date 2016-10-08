@@ -23,9 +23,11 @@
     makeTexture () {
       const a = this.grid;
       const size = 512;
+
       a.canvas = document.createElement('canvas');
       a.canvas.width = size;
       a.canvas.height = size;
+	  
       a.ctx = a.canvas.getContext('2d');
       this.texture = new THREE.Texture(a.canvas);
       return this.texture;
@@ -95,8 +97,8 @@
     camera.lookAt(scene.position);
     scene.add(camera);
     renderer.setSize(width, height);
-    renderer.setClearColor(0x111111);
-    document.body.appendChild(renderer.domElement);
+    renderer.setClearColor(0x252830);
+	document.getElementById("arrowContainer").appendChild(renderer.domElement);
   }
 
   function renderFrame(ts) {
@@ -104,5 +106,6 @@
     renderer.render(scene, camera);
     plane.update(ts);
   }
-
-  document.getElementById("arrow") = init();
+  
+  init();
+  
