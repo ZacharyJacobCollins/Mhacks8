@@ -1,5 +1,9 @@
 var map = new Vue({
     el: 'body',
+    data: {
+        pos: '', //your coordinates in format  { lat, lng }
+        nodes: [],
+    },
     ready: function() {
         console.log('map component loaded');
         this.initMap();
@@ -21,6 +25,12 @@ var map = new Vue({
                         lng: position.coords.longitude
                     };
 
+                    console.log('Your position detected');
+                    console.log(pos);
+
+                    //Set the data pos
+                    this.pos = pos;
+
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('Location found.');
                     map.setCenter(pos);
@@ -40,8 +50,13 @@ var map = new Vue({
                 'Error: Your browser doesn\'t support geolocation.');
         },
         /**
-         * 
+         *  Web worker polling and checking to see if any new updates within the area 
+         * @return adds a new node to the array of nodes
         */
+        poll: function() {
+
+        }
+
     },
 
 });
