@@ -1,9 +1,7 @@
-var i = 0;
-
-function timedCount() {
-    i = i + 1;
-    postMessage(i);
-    setTimeout("timedCount()",500);
+function updatePosition() {
+    postMessage(mapVueInstance);
+    // setTimeout("timedCount()", 10000);
+    setTimeout("timedCount()", 3000);
 }
 
-timedCount();
+updatePosition();
