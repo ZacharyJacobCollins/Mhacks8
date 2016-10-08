@@ -1,5 +1,4 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Display dashboard
+Route::get('/', 'AppController@dashboard');

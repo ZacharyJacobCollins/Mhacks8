@@ -11,7 +11,7 @@ class AppController extends Controller
   /**
   *  Show app
   */
-  public function show() {
-    return view('app.dashboard')
+  public function dashboard() {
+    return view('app.dashboard');
   }
 }
