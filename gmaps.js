@@ -9,11 +9,13 @@ function initialize() {
     var map;
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
-        mapTypeId: 'roadmap'
+        zoom:12,
+		center:new google.maps.LatLng(51.503454,-0.119562),
+		mapTypeId: google.maps.MapTypeId.ROADMAP
     };
                     
     // Display a map on the page
-    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    map = new google.maps.Map(document.getElementById("gmap_canvas"), mapOptions);
     map.setTilt(45);
         
     // Multiple Markers
@@ -38,10 +40,10 @@ function initialize() {
     
     // Loop through our array of markers & place each one on the map  
     for( i = 0; i < markers.length; i++ ) {
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-        bounds.extend(position);
+        var pos = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(pos);
         marker = new google.maps.Marker({
-            position: position,
+            position: pos,
             map: map,
             title: markers[i][0]
         });
