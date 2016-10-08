@@ -1,0 +1,26 @@
+{
+  "name": "mhacks8",
+  "version": "1.0.0",
+  "description": "#Objectives",
+  "main": "gmaps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZacharyJacobCollins/Mhacks8.git"
+  },
+  "keywords": [
+    "clear"
+  ],
+  "author": "ls",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZacharyJacobCollins/Mhacks8/issues"
+  },
+  "homepage": "https://github.com/ZacharyJacobCollins/Mhacks8#readme",
+  "dependencies": {
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1"
+  }
+}
