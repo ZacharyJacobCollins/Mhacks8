@@ -6,11 +6,12 @@ var map = new Vue({
     },
     ready: function() {
         console.log('map component loaded');
+        //boot the google map, and begin web worker polling for location
         this.initMap();
-    },  
+    },
     methods: {
         //Initialize google map
-        initMap: function() {
+        init: function() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: -34.397, lng: 150.644 },
                 zoom: 6
@@ -19,6 +20,7 @@ var map = new Vue({
 
             // Try HTML5 geolocation.
             if (navigator.geolocation) {
+                //Retrieve and update location
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {
                         lat: position.coords.latitude,
@@ -37,6 +39,8 @@ var map = new Vue({
                 }, function() {
                     this.handleLocationError(true, infoWindow, map.getCenter());
                 });
+                //Start the webworker polling for location
+                this.poll();
             } else {
                 // Browser doesn't support Geolocation
                 this.handleLocationError(false, infoWindow, map.getCenter());
@@ -50,13 +54,34 @@ var map = new Vue({
                 'Error: Your browser doesn\'t support geolocation.');
         },
         /**
-         *  Web worker polling and checking to see if any new updates within the area 
+         *  Web worker polling and checking to see if any new updates within the area
          * @return adds a new node to the array of nodes
         */
         poll: function() {
+            //Define the start worker function
+            function startWorker() {
+                if(typeof(Worker) !== "undefined") {
+                    if(typeof(w) == "undefined") {
+                        //Create a new counting worker
+                        w = new Worker("/js/map/mapworker.js");
+                    }
+                    w.onmessage = function(event) {
+                        console.log(event.data);
+                    };
+                } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+                }
+            }
 
-        }
+            //Define the stop worker function
+            function stopWorker() {
+                w.terminate();
+                w = undefined;
+            }
 
+            //Start worker
+            startWorker();
+        },
     },
 
 });
