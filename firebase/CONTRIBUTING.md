@@ -1,110 +1,177 @@
-# Contributing Guide
+# Contributing to the Firebase FriendlyChat Codelab
 
-Contributing to `firebase-server` is fairly easy. This document shows you how to
-get the project, run all provided tests and generate a production ready build.
+We'd love for you to contribute to our source code and to make the Firebase FriendlyChat Codelab even better than it is today! Here are the guidelines we'd like you to follow:
 
-It also covers provided npm scripts, that help you developing on `firebase-server`.
+ - [Code of Conduct](#coc)
+ - [Question or Problem?](#question)
+ - [Issues and Bugs](#issue)
+ - [Feature Requests](#feature)
+ - [Submission Guidelines](#submit)
+ - [Coding Rules](#rules)
+ - [Signing the CLA](#cla)
 
-## Dependencies
+## <a name="coc"></a> Code of Conduct
 
-To make sure that the following instructions work, please install the following dependencies
-on you machine:
+As contributors and maintainers of the Firebase FriendlyChat Codelab project, we pledge to respect everyone who contributes by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and any other activities.
 
-- Node.js
-- npm
-- Git
+Communication through any of Firebase's channels (GitHub, StackOverflow, Google+, Twitter, etc.) must be constructive and never resort to personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.
 
-You should also consider `nvm` or some similar tool which lets you switch between versions of Node quickly.
+We promise to extend courtesy and respect to everyone involved in this project regardless of gender, gender identity, sexual orientation, disability, age, race, ethnicity, religion, or level of experience. We expect anyone contributing to the project to do the same.
 
-## Installation
+If any member of the community violates this code of conduct, the maintainers of the Firebase  Android Quickstarts project may take action, removing issues, comments, and PRs or blocking accounts as deemed appropriate.
 
-To get the source of `firebase-server` clone the git repository via:
+If you are subject to or witness unacceptable behavior, or have any other concerns, please drop us a line at nivco@google.com.
 
-```sh
-git clone https://github.com/urish/firebase-server
+## <a name="question"></a> Got a Question or Problem?
+
+If you have questions about how to use the Firebase FriendlyChat Codelab, please direct these to [StackOverflow][stackoverflow] and use the `firebase` tag. We are also available on GitHub issues.
+
+If you feel that we're missing an important bit of documentation, feel free to
+file an issue so we can help. Here's an example to get you started:
+
+```
+What are you trying to do or find out more about?
+
+Where have you looked?
+
+Where did you expect to find this information?
 ```
 
-This will clone the complete source to your local machine. Navigate to the project folder
-and install all needed dependencies via **npm**:
+## <a name="issue"></a> Found an Issue?
+If you find a bug in the source code or a mistake in the documentation, you can help us by
+submitting an issue to our [GitHub Repository][github]. Even better you can submit a Pull Request
+with a fix.
 
-```sh
-npm install
+See [below](#submit) for some guidelines.
+
+## <a name="submit"></a> Submission Guidelines
+
+### Submitting an Issue
+Before you submit your issue search the archive, maybe your question was already answered.
+
+If your issue appears to be a bug, and hasn't been reported, open a new issue.
+Help us to maximize the effort we can spend fixing issues and adding new
+features, by not reporting duplicate issues.  Providing the following information will increase the
+chances of your issue being dealt with quickly:
+
+* **Overview of the Issue** - if an error is being thrown a non-minified stack trace helps
+* **Motivation for or Use Case** - explain why this is a bug for you
+* **Browsers and Operating System** - is this a problem with all browsers or only IE9?
+* **Reproduce the Error** - provide a live example (using JSBin) or a unambiguous set of steps.
+* **Related Issues** - has a similar issue been reported before?
+* **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
+  causing the problem (line of code or commit)
+
+**If you get help, help others. Good karma rulez!**
+
+Here's a template to get you started:
+
+```
+Browser:
+Browser version:
+Operating system:
+Operating system version:
+
+What steps will reproduce the problem:
+1.
+2.
+3.
+
+What is the expected result?
+
+What happens instead of that?
+
+Please provide any other information below, and attach a screenshot if possible.
 ```
 
-Well done! `firebase-server` is now installed and you can start tinkering with it.
+### Submitting a Pull Request
+Before you submit your pull request consider the following guidelines:
 
-## Building
+* Search [GitHub](https://github.com/firebase/codelab-friendlychat/pulls) for an open or closed Pull Request
+  that relates to your submission. You don't want to duplicate effort.
+* Please sign our [Contributor License Agreement (CLA)](#cla) before sending pull
+  requests. We cannot accept code without this.
+* Make your changes in a new git branch:
 
-`firebase-server` comes with a few **npm scripts** which help you to automate
-the development process. The following npm scripts are provided:
+     ```shell
+     git checkout -b my-fix-branch master
+     ```
 
-#### npm test
+* Create your patch, **including appropriate test cases**.
+* Follow our [Coding Rules](#rules).
+* Avoid checking in files that shouldn't be tracked (e.g `node_modules`, `gulp-cache`, `.tmp`, `.idea`). We recommend using a [global](#global-gitignore) gitignore for this.
+* Make sure **not** to include a recompiled version of the files found in `/css` and `/js` as part of your PR. We will generate these automatically.
+* Commit your changes using a descriptive commit message.
 
-`npm test` executes (as you might thought) the unit tests, which are located
-in the `test` directory. The task uses the **mocha** test runner to execute
-the tests, and **istanbul** for tracking the code coverage. This task also checks
-the coding for potential programming errors using **eslint**.
+     ```shell
+     git commit -a
+     ```
+  Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
 
-*You should ensure `npm test` passes on node 0.10, and 4.x before submitting a PR*
+* Build your changes locally to ensure all the tests pass:
 
-#### npm run debug
+    ```shell
+   gulp
+    ```
 
-`npm run debug` executes the unit tests in debugging mode. It skips the linter, 
-and runs `mocha` without the coverage tool (the coverage tool slows tests and obfuscates error stack traces).
+* Push your branch to GitHub:
 
-You can also just call `mocha` from the command line, if you installed mocha globally (`npm install --global mocha`).
+    ```shell
+    git push origin my-fix-branch
+    ```
 
-#### npm run watch
+* In GitHub, send a pull request to `codelab-friendlychat:master`.
+* If we suggest changes then:
+  * Make the required updates.
+  * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
-`npm run watch` will watch the source files and rerun the tests every time a file changes.
+    ```shell
+    git rebase master -i
+    git push origin my-fix-branch -f
+    ```
 
-You can also just call `mocha -w` from the command line, if you installed mocha globally (`npm install --global mocha`).
+That's it! Thank you for your contribution!
 
-## Using ES6 Language Features
+#### After your pull request is merged
 
-The test suite uses `babel` to provide ES6 language features *for the tests only*. 
+After your pull request is merged, you can safely delete your branch and pull the changes
+from the main (upstream) repository:
 
-*In the tests*:  
-  Feel free to use any language feature supported by default in the latest *stable* version of Node 
-  (4.1.2 at time of writing). ES6 features that are not yet adopted into the Node *stable* branch 
-  should *not* be used (i.e. no features that require the `--es_staging` flag).
+* Delete the remote branch on GitHub either through the GitHub Android UI or your local shell as follows:
 
-*In production code*:  
-  You must stick to ES5 language features supported by Node 0.10.
+    ```shell
+    git push origin --delete my-fix-branch
+    ```
 
-## Contributing/Submitting changes
+* Check out the master branch:
 
-- If you are changing the API or adding features, it is **highly** recommended that
- you open an issue on GitHub to propose your change and get feedback before beginning work.
-- Check out the [open issues](https://github.com/urish/firebase-server/issues) for ideas on where to contribute.
-- Checkout a new branch based on `master` and name it to what you intend to do:
-  - Example:
-    ````
-    $ git checkout -b BRANCH_NAME
-    ````
-  - Use one branch per fix/feature
-- Make your changes
-  - Make sure to provide a spec for unit tests (in `test/server.spec.js` or similar). 
-    You should strive for 100% coverage of any code you add (this is not a strict requirement).
-  - Run your tests with `npm test`
-  - When all tests pass, everything is fine
-- Commit your changes
-  - Please provide a git message which explains what you have done.  
-  - Commit to the forked repository
-- Make a pull request
+    ```shell
+    git checkout master -f
+    ```
 
-If you follow these instructions, your PR will land pretty safely in the main repo!
+* Delete the local branch:
 
-## Inspecting the Firebase Websocket Protocol
+    ```shell
+    git branch -D my-fix-branch
+    ```
 
-Chrome DevTools includes a very handy tool for inspecting Websocket communications, but it is a little hard to find.
-Note the highlighted selections in the screenshot below:
+* Update your master with the latest upstream version:
 
-![websocket debug screenshot](https://rawgit.com/urish/firebase-server/master/media/websocket-debug.png)
+    ```shell
+    git pull --ff upstream master
+    ```
 
-1. Open the Network Tab in Chrome Dev Tools.
-2. Enable filtering and then filter by web sockets (by clicking `WS`).
-3. Select the connection you are interested in (`.ws?v=...`)
-4. Click on `Frames` to see the entire chat between the client and the server:
+## <a name="cla"></a> Signing the CLA
 
-You can match requests and responses by looking at the d.r parameter, which is the sequential request id.
+Please sign our [Contributor License Agreement][google-cla] (CLA) before sending pull requests. For any code
+changes to be accepted, the CLA must be signed. It's a quick process, we promise!
+
+*This guide was inspired by the [AngularJS contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).*
+
+[github]: https://github.com/firebase/codelab-friendlychat
+[google-cla]: https://cla.developers.google.com
+[js-style-guide]: http://google.github.io/styleguide/javascriptguide.xml
+[py-style-guide]: http://google.github.io/styleguide/pyguide.html
+[jsbin]: http://jsbin.com/
+[stackoverflow]: http://stackoverflow.com/questions/tagged/firebase
+[global-gitignore]: https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
