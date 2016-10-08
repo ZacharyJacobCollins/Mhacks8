@@ -1,4 +1,5 @@
 #Notes
+  * We uh, don't support IE.  We got edge tho fam.
 
 #Objectives
 

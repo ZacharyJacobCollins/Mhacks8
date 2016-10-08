@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" href="public/css/style.css">
+<link rel="stylesheet" href="/css/mapstyle.css">
 
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -17,14 +17,14 @@
 <footer-component>
 
     <!-- Vue js -->
-    <script src="public/js/vue/vue.min.js"></script>
+    <script src="/js/vue/vue.min.js"></script>
 
     <!-- Google Maps -->
-    <script src="public/js/vue/vue-map.js"></script>
+    <script src="/js/vue/vue-map.js"></script>
 
     <!-- callback, LAST google maps script -->
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=map.initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=map.init"></script>
 
 </footer-component>
 

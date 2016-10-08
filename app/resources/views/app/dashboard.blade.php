@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <meta name="author" content="">
 
     <title>
+
 
 
     </title>
@@ -187,10 +189,10 @@
   </div>
 </div>
 
-    <script src="/js/jquery.min.js(1)."></script>
-    <script src="/js/tablesorter.min.js"></script>
-    <script src="/js/toolkit.js"></script>
-    <script src="/js/application.js"></script>
+    <script src="./js/jquery.min.js(1)."></script>
+    <script src="./js/tablesorter.min.js"></script>
+    <script src="./js/toolkit.js"></script>
+    <script src="./js/application.js"></script>
     <script>
       // execute/clear BS loaders for docs
       $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
