@@ -14,3 +14,9 @@
 #Dependencies
     Google maps api https://developers.google.com/maps/documentation/javascript/   AIzaSyAerCKbovDWR9UMFR_ZMOfOao3e2bfBhzg
     Google places api https://developers.google.com/places/javascript/  AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk
+
+#Nginx configuration
+  * Letsencrypt using this tutorial ./letsencrypt-auto --config /etc/letsencrypt/configs/zacharyjacobcollins.me.conf certonly
+  * pointing at zacharyjacobcollins.me
+
+run with -vvvv

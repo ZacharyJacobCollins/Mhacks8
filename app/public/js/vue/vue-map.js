@@ -16,7 +16,7 @@ var map = new Vue({
             if (navigator.geolocation) {
                   //Retrieve and update location
                   this.updatePosition();
-                  
+
             //START OF ELSE STATEMENT
             } else {
                   // Browser doesn't support Geolocation
