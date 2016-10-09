@@ -11,7 +11,7 @@ var app = new Vue({
           {title: "test", filter: ''},
           {title: "test", filter: ''},
         ],
-        message: { test: 'test' }
+        message: { test: 'test' },
     },
     ready: function() {
         console.log('map component loaded');
@@ -39,12 +39,6 @@ var app = new Vue({
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.');
         },
-        /**
-         * @return adds a new node to the array of nodes
-        */
-        pollPosition: function(navigator) {
-
-        },
         callback: function(position) {
               var pos = {
                   lat: position.coords.latitude,
@@ -65,22 +59,23 @@ var app = new Vue({
               infoWindow.setContent('Location lat: '+pos.lat+' lng: '+pos.lng);
               map.setCenter(pos);
 
-              console.log(navigator);
 
-              //Map worker to continue retriving location in background
               function startWorker() {
                   if(typeof(Worker) !== "undefined") {
                       if(typeof(w) == "undefined") {
-                          //Create a new counting worker
                           w = new Worker("/js/map/mapworker.js");
                       }
                       w.onmessage = function(event) {
-                          console.log(event.data);
+                          console.log( event.data );
                       };
                   } else {
-                      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+                      console.log("No Web Worker support.");
                   }
               }
+
+              startWorker();
+
+
           }, function() {
               this.handleLocationError(true, infoWindow, map.getCenter());
         },
