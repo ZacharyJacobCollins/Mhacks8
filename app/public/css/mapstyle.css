@@ -9,3 +9,10 @@ body {
   height: 550px;
   width: 845px;
 }
+
+@media (max-width:600) {
+  #map {
+    height: 400px;
+    width: 600px;
+  }
+}
