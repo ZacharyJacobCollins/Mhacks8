@@ -11,7 +11,7 @@ var app = new Vue({
           {title: "test", filter: ''},
           {title: "test", filter: ''},
         ],
-        message: { test: 'test' }
+        message: { test: 'test' },
     },
     ready: function() {
         console.log('map component loaded');
@@ -23,7 +23,6 @@ var app = new Vue({
             if (navigator.geolocation) {
                   //Retrieve and update location
                   this.updatePosition();
-
             //START OF ELSE STATEMENT
             } else {
                   // Browser doesn't support Geolocation
@@ -40,17 +39,14 @@ var app = new Vue({
                 'Error: The Geolocation service failed.' :
                 'Error: Your browser doesn\'t support geolocation.');
         },
-        /**
-         * @return adds a new node to the array of nodes
-        */
-        pollPosition: function(navigator) {
-
-        },
         callback: function(position) {
               var pos = {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude
               };
+
+              //set initial location
+              this.pos = pos;
 
               console.log('Your position detected');
               console.log(pos);
@@ -66,22 +62,25 @@ var app = new Vue({
               infoWindow.setContent('Location lat: '+pos.lat+' lng: '+pos.lng);
               map.setCenter(pos);
 
-              console.log(navigator);
-
-              //Map worker to continue retriving location in background
+              //Function to call the web worker
               function startWorker() {
                   if(typeof(Worker) !== "undefined") {
                       if(typeof(w) == "undefined") {
-                          //Create a new counting worker
                           w = new Worker("/js/map/mapworker.js");
                       }
                       w.onmessage = function(event) {
-                          console.log(event.data);
+                          console.log(JSON.parse(event.data));
+                          this.pos = JSON.parse(event.data).location;   //Also returns an accuracy if wanted
+                          console.log('updated position: ');
+                          console.log( this.pos );
                       };
                   } else {
-                      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+                      console.log("No Web Worker support.");
                   }
               }
+
+              //Boot the worker
+              startWorker();
 
           }, function() {
               this.handleLocationError(true, infoWindow, map.getCenter());
