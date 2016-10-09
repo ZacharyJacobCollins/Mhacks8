@@ -23,9 +23,11 @@
     makeTexture () {
       const a = this.grid;
       const size = 512;
+
       a.canvas = document.createElement('canvas');
       a.canvas.width = size;
       a.canvas.height = size;
+	  
       a.ctx = a.canvas.getContext('2d');
       this.texture = new THREE.Texture(a.canvas);
       return this.texture;
@@ -76,12 +78,12 @@
     }
   }
 
-  const width = 200;
-  const height = 200;
+  const width = 50;
+  const height = 50;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer({alpha:true});
 
   const plane = new LiquidPlane(100, 'img').init(scene);
 
@@ -95,8 +97,8 @@
     camera.lookAt(scene.position);
     scene.add(camera);
     renderer.setSize(width, height);
-    renderer.setClearColor(0x111111);
-    document.body.appendChild(renderer.domElement);
+    renderer.setClearColor(0x000000, 0);
+	document.getElementById("arrowContainer").appendChild(renderer.domElement);
   }
 
   function renderFrame(ts) {
@@ -104,5 +106,6 @@
     renderer.render(scene, camera);
     plane.update(ts);
   }
-
-  document.getElementById("arrow") = init();
+  
+  init();
+  
