@@ -7,14 +7,14 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="/css/mapstyle.css">
 
     <title>Internodes</title>
 
     <!-- Stylesheets -->
-    <link href="/css/css.css" rel="stylesheet">
-    <link href="/css/toolkit-inverse.css" rel="stylesheet" />
-    <link href="/css/application.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/mapstyle.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/css.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/toolkit-inverse.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/application.css') }}">
 
     <style>
       /* note: this is a hack */
@@ -85,7 +85,7 @@
 
               <!-- Title and subtitle -->
               <div class="apb">
-                <h6 class="apd" style="color:grey">Mhacks8</h6>
+                <h6 class="apd" style="color:grey">Mhacks 8</h6>
                 <h2 class="apc" style="color: #1997c6; font-weight: 300;">Internodes</h2>
               </div>
 
@@ -110,28 +110,11 @@
 
   	    <br>
 
-  	    <h4 class="ty">Active Nodes</h4>
-
-        <div style="width:100%">
-        	<button id='button' style="width:100%; font-size: 16px; font-family:Roboto;">Hacks8 Closing Ceremony</button>
-        	<div id="newpost" style="padding-left: 2.5em; font-size: 15px;">
-        		From where you are:<br>
-        		<ol><li> Head southwest</li>
-        		<li> Turn left toward Cass Ave</li>
-        		<li> Turn left onto Cass Ave</li>
-        		<li> Turn right onto Temple St</li></ol>
-        		Then you'll be at the <b>Detroit Masonic Temple</b><br>
-        	</div>
-        </div>
 
         <!-- Events -->
-        <template v-for="n in 5">
-          <h1>  @{{  n }} </h1>
-            <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#">
-              <b>Pretend event here</b><br>
-        	  Description of pretend event here
-            </a>
-        </template>
+        <span v-for="event in events">
+          <span class="ty">@{{ event }}</span>
+        </span>
 
         </div>
           <a href="https://bootstrap-themes.github.io/dashboard/#" class="ce apn ame" style="margin: auto; left: 50%;">View all devices</a>
@@ -161,7 +144,6 @@
 
   </body>
 
-  <footer-component>
       <!-- Libraries -->
     	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
       <script src="/js/jquery.min.js"></script>
@@ -171,7 +153,6 @@
       <script src="/js/application.js"></script>
 
       <!-- Custom Javascript -->
-      <script src="/js/collapse.js"></script>
       <script src="/js/arrow.js" type="text/javascript"></script>
 
       <!-- Execute/clear BS loaders for docs -->
@@ -180,14 +161,12 @@
       </script>
 
       <!-- Vue js -->
-      <script src="/js/vue/vue.min.js"></script>
+      <script src="{{ URL::asset('js/vue/vue.min.js') }}"></script>
 
       <!-- Google Maps -->
-      <script src="/js/vue/vue-map.js"></script>
+      <script src="{{ URL::asset('js/vue/vue-app.js') }}"></script>
 
       <!-- callback, LAST google maps script
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=map.init"></script> -->
-
-  </footer-component>
 
 </html>

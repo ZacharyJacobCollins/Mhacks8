@@ -1,10 +1,17 @@
-var map = new Vue({
+var app = new Vue({
     el: 'html',
     data: {
-        pos: {}, //your coordinates in format  { lat, lng }
+        pos: {},            //A user's coordinates in format { lat, lng }
         nodes: [],
         map: {},
         infoWindow: {},
+        events: [
+          {title: "test"},
+          {title: "test"},
+          {title: "test"},
+          {title: "test"},
+          {title: "test"},
+        ],
     },
     ready: function() {
         console.log('map component loaded');
@@ -80,5 +87,4 @@ var map = new Vue({
               this.handleLocationError(true, infoWindow, map.getCenter());
         },
     },
-
 });
