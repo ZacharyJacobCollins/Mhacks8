@@ -15,7 +15,7 @@ class AppController extends Controller
     return view('app.dashboard');
   }
 
-  public function test() {
-    return view('app.test');
+  public function esri() {
+    return view('app.esri');
   }
 }

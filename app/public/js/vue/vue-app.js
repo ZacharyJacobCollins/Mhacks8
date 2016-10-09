@@ -23,7 +23,6 @@ var app = new Vue({
             if (navigator.geolocation) {
                   //Retrieve and update location
                   this.updatePosition();
-
             //START OF ELSE STATEMENT
             } else {
                   // Browser doesn't support Geolocation
@@ -82,7 +81,6 @@ var app = new Vue({
                       document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
                   }
               }
-
           }, function() {
               this.handleLocationError(true, infoWindow, map.getCenter());
         },

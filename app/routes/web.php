@@ -2,5 +2,5 @@
 
 //Display dashboard
 Route::get('/', 'AppController@dashboard');
-Route::get('/test', 'AppController@test');
+Route::get('/esri', 'AppController@esri');
 Route::get('/map/{mapParams}', 'MapController@show');

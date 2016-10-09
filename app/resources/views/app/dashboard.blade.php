@@ -111,7 +111,6 @@
 
   	    <br>
 
-
         <!-- Events -->
         <span v-for="node in nodes">
           <h4 class="ty">Active Nodes</h4>
