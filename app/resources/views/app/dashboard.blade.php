@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +12,9 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ URL::asset('css/mapstyle.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/css.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/toolkit-inverse.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/application.css') }}">
+    <link href="{{ URL::asset('css/css.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/toolkit-inverse.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('css/application.css') }}" rel="stylesheet">
 
     <style>
       /* note: this is a hack */
@@ -27,6 +27,8 @@
   </head>
 
   <body>
+    <div id="app">
+      @{{message}}
     <div class="bw">
       <div class="fu">
         <div class="ge aom">
@@ -103,7 +105,7 @@
         <div class="by">
 
         <!-- Internodes Arrow logo -->
-  	    <div id="arrowContainer" style="margin-left:10px; margin-top:10px;position:absolute;z-index:2;"></div>
+  	    <div id="arrowContainer" style="margin-left:10px; margin-top:10px;position:absolute;z-index:2;"><script src="{{ URL::asset('js/three.min.js') }}"></script></div>
 
         <!-- The map -->
   	    <img src="./images/detroit.png" style="width: 100%; padding-bottom : 10px;position:relative;">
@@ -113,7 +115,7 @@
 
         <!-- Events -->
         <span v-for="event in events">
-          <span class="ty">@{{ event }}</span>
+          <h4 class="ty">Active Nodes</h4>
         </span>
 
         </div>
@@ -141,19 +143,18 @@
         </div>
       </div>
     </div>
+  </div><!-- end app-->
 
   </body>
 
       <!-- Libraries -->
-    	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-      <script src="/js/jquery.min.js"></script>
-      <script src="/js/three.min.js"></script>
-      <script src="/js/tablesorter.min.js"></script>
-      <script src="/js/toolkit.js"></script>
-      <script src="/js/application.js"></script>
+      <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+      <script src="{{ URL::asset('js/tablesorter.min.js') }}"></script>
+      <script src="{{ URL::asset('js/toolkit.js') }}"></script>
+      <script src="{{ URL::asset('js/application.js') }}"></script>
 
       <!-- Custom Javascript -->
-      <script src="/js/arrow.js" type="text/javascript"></script>
+      <script src="{{ URL::asset('js/arrow.js') }}" type="text/javascript"></script>
 
       <!-- Execute/clear BS loaders for docs -->
       <script>
@@ -165,6 +166,7 @@
 
       <!-- Google Maps -->
       <script src="{{ URL::asset('js/vue/vue-app.js') }}"></script>
+
 
       <!-- callback, LAST google maps script
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=map.init"></script> -->

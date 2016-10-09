@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#app',
+    el: '#test',
     data: {
         pos: {},            //A user's coordinates in format { lat, lng }
         nodes: [],
@@ -12,7 +12,7 @@ var app = new Vue({
           {title: "test"},
           {title: "test"},
         ],
-        message: { test: 'test' }
+        message: 'test',
     },
     ready: function() {
         console.log('map component loaded');
