@@ -1,0 +1,5 @@
+{"type":"features","features":[{"geometry":{"x":-11333654.778543357,"y":5627426.68264637,"spatialReference":{"wkid":102100,"latestWkid":3857}},"attributes":{"CurbApproach":null,"Name":"-101.811953 45.037498_1000"}},{"geometry":{"x":-9729088.680781364,"y":5128445.762000872,"spatialReference":{"wkid":102100,"latestWkid":3857}},"attributes":{"CurbApproach":null,"Name":"-87.397891 41.782442_1001"}}],"doNotLocateOnRestrictedElements":true}
+
+
+
+https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?f=pjson&stops={"type":"features","features":[{"geometry":{"x":-11333654.778543357,"y":5627426.68264637,"spatialReference":{"wkid":102100,"latestWkid":3857}},"attributes":{"CurbApproach":null,"Name":"-101.811953 45.037498_1000"}},{"geometry":{"x":-9729088.680781364,"y":5128445.762000872,"spatialReference":{"wkid":102100,"latestWkid":3857}},"attributes":{"CurbApproach":null,"Name":"-87.397891 41.782442_1001"}}],"doNotLocateOnRestrictedElements":true}&token=dpxVzokylVAcu0V9D36CI3vQ4qp4dbi2FlINp9_75CqJmuRrga7PLxQVjY5KfBxmT-SV22XIqT_w0sDO8gMns1a6BriVS27PQ8q-Rna-3o94JvQM-S2XeYo5RsyUw2XSNNWeh2hjbF0gFpTNcJo42Q..
