@@ -45,6 +45,9 @@ var app = new Vue({
                   lng: position.coords.longitude
               };
 
+              //set initial location
+              this.pos = pos;
+
               console.log('Your position detected');
               console.log(pos);
 
@@ -59,22 +62,25 @@ var app = new Vue({
               infoWindow.setContent('Location lat: '+pos.lat+' lng: '+pos.lng);
               map.setCenter(pos);
 
-
+              //Function to call the web worker
               function startWorker() {
                   if(typeof(Worker) !== "undefined") {
                       if(typeof(w) == "undefined") {
                           w = new Worker("/js/map/mapworker.js");
                       }
                       w.onmessage = function(event) {
-                          console.log( event.data );
+                          console.log(JSON.parse(event.data));
+                          this.pos = JSON.parse(event.data).location;   //Also returns an accuracy if wanted
+                          console.log('updated position: ');
+                          console.log( this.pos );
                       };
                   } else {
                       console.log("No Web Worker support.");
                   }
               }
 
+              //Boot the worker
               startWorker();
-
 
           }, function() {
               this.handleLocationError(true, infoWindow, map.getCenter());
