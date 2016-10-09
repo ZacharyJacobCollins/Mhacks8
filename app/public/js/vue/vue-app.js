@@ -5,12 +5,11 @@ var app = new Vue({
         nodes: [],
         map: {},
         infoWindow: {},
-        events: [
-          {title: "test"},
-          {title: "test"},
-          {title: "test"},
-          {title: "test"},
-          {title: "test"},
+        nodes: [
+          {title: "test", filter: ''},
+          {title: "test", filter: ''},
+          {title: "test", filter: ''},
+          {title: "test", filter: ''},
         ],
         message: { test: 'test' }
     },

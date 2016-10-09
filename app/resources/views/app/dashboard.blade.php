@@ -28,7 +28,6 @@
 
   <body>
     <div id="app">
-      @{{message}}
     <div class="bw">
       <div class="fu">
         <div class="ge aom">
