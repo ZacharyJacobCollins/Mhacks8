@@ -14,4 +14,8 @@ class AppController extends Controller
   public function dashboard() {
     return view('app.dashboard');
   }
+
+  public function test() {
+    return view('app.test');
+  }
 }
