@@ -33,6 +33,7 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
+[hidden],
 a {
   background-color: transparent;
 }
