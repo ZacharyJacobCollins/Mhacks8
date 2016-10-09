@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
+	
+
 
     <title>
 
@@ -14,12 +16,11 @@
 
     </title>
 
-    <link href="./css" rel="stylesheet">
-
-      <link href="./toolkit-inverse.css" rel="stylesheet">
-	<script src="./three.min.js"></script>
-
-    <link href="./application.css" rel="stylesheet">
+    <link href="./css/css.css" rel="stylesheet">
+    <link href="./css/toolkit-inverse.css" rel="stylesheet">
+	<script src="./js/three.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="./css/application.css" rel="stylesheet">
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -34,9 +35,6 @@
 
 
 <body>
-<div id="arrowContainer" style="margin-left:18.25vw">
-<script src="./arrow.js" type="text/javascript"></script>
-</div>
   <div class="bw">
 	
     <div class="fu">
@@ -122,58 +120,52 @@
 
 
 <div class="by">
-  <h4 class="ty">
-    Devices and resolutions
-  </h4>
+	
+	<div id="arrowContainer" style="margin-left:10px; margin-top:10px;position:absolute;z-index:2;">
+		<script src="./js/arrow.js" type="text/javascript"></script>
+	</div>
+	<img src="./images/detroit.png" style="width: 100%; padding-bottom : 10px;position:relative;">
+	
+	<br>
+	
+	<h4 class="ty">Active Nodes</h4>
+	
+<div style="width:100%">
+	<button id='button' style="width:100%; font-size: 16px; font-family:Roboto;">Hacks8 Closing Ceremony</button>	
+	<div id="newpost" style="padding-left: 2.5em; font-size: 15px;">
+		From where you are:<br>
+		<ol><li> Head southwest</li>
+		<li> Turn left toward Cass Ave</li>
+		<li> Turn left onto Cass Ave</li>
+		<li> Turn right onto Temple St</li></ol>
+		Then you'll be at the <b>Detroit Masonic Temple</b><br>
+	</div>
 
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">3,929,481</span>
-      Desktop (1920x1080)
+ </div>
+
+    <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#"> 
+      <b>Pretend event here</b><br>
+	  Description of pretend event here
     </a>
 
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">1,143,393</span>
-      Desktop (1366x768)
+    <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#">
+      <b>Pretend event here</b><br>
+	  Description of pretend event here
     </a>
 
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">938,287</span>
-      Desktop (1440x900)
+    <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#">
+       <b>Pretend event here</b><br>
+	  Description of pretend event here
     </a>
 
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">749,393</span>
-      Desktop (1280x800)
+    <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#">
+      <b>Pretend event here</b><br>
+	  Description of pretend event here
     </a>
 
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">695,912</span>
-      Tablet (1024x768)
-    </a>
-
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">501,938</span>
-      Tablet (768x1024)
-    </a>
-
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">392,842</span>
-      Phone (320x480)
-    </a>
-
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">298,183</span>
-      Phone (720x450)
-    </a>
-
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">193,129</span>
-      Desktop (2560x1080)
-    </a>
-
-    <a class="ph" href="https://bootstrap-themes.github.io/dashboard/#">
-      <span class="dy dh">93,382</span>
-      Desktop (2560x1600)
+    <a class="ph" id="node" href="https://bootstrap-themes.github.io/dashboard/#">
+      <b>Pretend event here</b><br>
+	  Description of pretend event here
     </a>
 
 </div>
@@ -204,10 +196,11 @@
   </div>
 </div>
 
-    <script src="./jquery.min.js(1)."></script>
-    <script src="./tablesorter.min.js"></script>
-    <script src="./toolkit.js"></script>
-    <script src="./application.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/tablesorter.min.js"></script>
+    <script src="./js/toolkit.js"></script>
+    <script src="./js/application.js"></script>
+	<script src="./js/collapse.js"></script>
     <script>
       // execute/clear BS loaders for docs
       $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
