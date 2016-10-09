@@ -4,7 +4,7 @@
       this.grid = {
         size: 28,
         nums: []
-      };                 
+      };
     }
     init (scene) {
       const geometry = new THREE.PlaneGeometry(this.size, this.size, 7, 7);
@@ -27,7 +27,6 @@
       a.canvas = document.createElement('canvas');
       a.canvas.width = size;
       a.canvas.height = size;
-	  
       a.ctx = a.canvas.getContext('2d');
       this.texture = new THREE.Texture(a.canvas);
       return this.texture;
@@ -53,24 +52,24 @@
       ctx.fillStyle = 'orange';
       ctx.beginPath();
       ctx.arc(
-        256 + Math.sin(ts / 200 * 0.8) * 200, 
-        256 + Math.cos(ts / 200 * 0.12) * 200, 
+        256 + Math.sin(ts / 200 * 0.8) * 200,
+        256 + Math.cos(ts / 200 * 0.12) * 200,
         rad, 0, Math.PI * 2, true);
       ctx.closePath();
       ctx.fill();
       ctx.fillStyle = 'blue';
       ctx.beginPath();
       ctx.arc(
-        256 + Math.sin(ts / 200 * 1.3) * 200, 
-        256 + Math.cos(ts / 200 * 0.4) * 200, 
+        256 + Math.sin(ts / 200 * 1.3) * 200,
+        256 + Math.cos(ts / 200 * 0.4) * 200,
         rad, 0, Math.PI * 2, true);
       ctx.closePath();
       ctx.fill();
       ctx.fillStyle = 'red';
       ctx.beginPath();
       ctx.arc(
-        256 + Math.sin(ts / 200 * 0.2) * 200, 
-        256 + Math.cos(ts / 200 * 0.95) * 200, 
+        256 + Math.sin(ts / 200 * 0.2) * 200,
+        256 + Math.cos(ts / 200 * 0.95) * 200,
         rad, 0, Math.PI * 2, true);
       ctx.closePath();
       ctx.fill();
@@ -85,6 +84,7 @@
   const camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({alpha:true});
 
+
   const plane = new LiquidPlane(100, 'img').init(scene);
 
   function init() {
@@ -98,7 +98,8 @@
     scene.add(camera);
     renderer.setSize(width, height);
     renderer.setClearColor(0x000000, 0);
-	document.getElementById("arrowContainer").appendChild(renderer.domElement);
+	  document.getElementById("arrowContainer").appendChild(renderer.domElement);
+
   }
 
   function renderFrame(ts) {
@@ -106,6 +107,5 @@
     renderer.render(scene, camera);
     plane.update(ts);
   }
-  
+
   init();
-  

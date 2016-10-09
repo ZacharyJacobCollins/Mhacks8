@@ -107,8 +107,7 @@
   	    <div id="arrowContainer" style="margin-left:10px; margin-top:10px;position:absolute;z-index:2;"><script src="{{ URL::asset('js/three.min.js') }}"></script></div>
 
         <!-- The map -->
-  	    <img src="./images/detroit.png" style="width: 100%; padding-bottom : 10px;position:relative;">
-
+        <div id="map"></div>
   	    <br>
 
         <!-- Events -->
@@ -166,7 +165,7 @@
       <script src="{{ URL::asset('js/vue/vue-app.js') }}"></script>
 
 
-      <!-- callback, LAST google maps script
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=map.init"></script> -->
+      <!-- callback, LAST google maps script-->
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDjLF1JlR93gIzz4vfVw7JCNYHY0HuTk&callback=app.init"></script>
 
 </html>

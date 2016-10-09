@@ -54,7 +54,7 @@ var app = new Vue({
               //Create a new google map, set center to current location
               var map = new google.maps.Map(document.getElementById('map'), {
                   center: { lat: pos.lat, lng: pos.lng },
-                  zoom: 6
+                  zoom: 20
               });
               var infoWindow = new google.maps.InfoWindow({ map: map });
 
