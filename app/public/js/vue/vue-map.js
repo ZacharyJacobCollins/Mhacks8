@@ -1,5 +1,5 @@
 var map = new Vue({
-    el: 'body',
+    el: 'html',
     data: {
         pos: {}, //your coordinates in format  { lat, lng }
         nodes: [],
